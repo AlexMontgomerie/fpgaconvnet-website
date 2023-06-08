@@ -7,7 +7,7 @@
 // charts for resource and performance
 const rsc_ctx = document.getElementById('rscChart').getContext('2d');
 const perf_ctx = document.getElementById('perfChart').getContext('2d');
-const pareto_ctx = document.getElementById('paretoChart').getContext('2d');
+// const pareto_ctx = document.getElementById('paretoChart').getContext('2d');
 
 // graph for hardware model
 const graph = document.getElementById("graph-wrapper");
@@ -55,7 +55,8 @@ for (let i = 0; i < 40; i++) {
 
 }
 
-var latest_log_file = 40;
+// var latest_log_file = 40;
+var latest_log_file = 0;
 
 
 function removeExtension(filename) {
@@ -204,44 +205,44 @@ const perfChart = new Chart(perf_ctx, {
 });
 
 // create a horizontal line chart for performance
-const paretoChart = new Chart(pareto_ctx, {
-    type: 'scatter',
-    data: {
-      datasets: [
-        {
-          label: "Pareto Front",
-          data: { x: 0, y: 0 },
-          backgroundColor: "rgb(255, 99, 132)", // red
-        },
-      ]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        x: {
-          type: 'linear',
-          position: 'bottom',
-          beginAtZero: true,
-          max: 100,
-          title: {
-            display: true,
-            text: 'Resource Usage (%)'
-          }
-        },
-        y: {
-          title: {
-            display: true,
-            text: 'Performance'
-          }
-        },
-      },
-      plugins: {
-        legend: {
-          display: false
-        }
-      }
-    }
-});
+// const paretoChart = new Chart(pareto_ctx, {
+//     type: 'scatter',
+//     data: {
+//       datasets: [
+//         {
+//           label: "Pareto Front",
+//           data: { x: 0, y: 0 },
+//           backgroundColor: "rgb(255, 99, 132)", // red
+//         },
+//       ]
+//     },
+//     options: {
+//       responsive: true,
+//       scales: {
+//         x: {
+//           type: 'linear',
+//           position: 'bottom',
+//           beginAtZero: true,
+//           max: 100,
+//           title: {
+//             display: true,
+//             text: 'Resource Usage (%)'
+//           }
+//         },
+//         y: {
+//           title: {
+//             display: true,
+//             text: 'Performance'
+//           }
+//         },
+//       },
+//       plugins: {
+//         legend: {
+//           display: false
+//         }
+//       }
+//     }
+// });
 
 
 // function to render graph
@@ -373,18 +374,31 @@ function sliderHandler() {
     let dotGraphFilePath = "vis/"+sliderValue+".dot";
     // upate the graph
     graph_render_once(dotGraphFilePath);
-    // highlight point on performance chart
-    selectedPoint = sliderValue-1;
-    perfChart.data.datasets[0].data = Array.from(throughput.values()).slice(0,sliderValue);
-    perfChart.data.datasets[1].data = Array.from(latency.values()).slice(0,sliderValue);
-    perfChart.data.labels = Array.from(throughput.keys()).slice(0,sliderValue);
+    // // highlight point on performance chart
+    // selectedPoint = sliderValue-1;
+    // perfChart.data.datasets[0].data = Array.from(throughput.values()).slice(0,sliderValue);
+    // perfChart.data.datasets[1].data = Array.from(latency.values()).slice(0,sliderValue);
+    // perfChart.data.labels = Array.from(throughput.keys()).slice(0,sliderValue);
+    // perfChart.update();
+
+    // var segment = perfChart.getDatasetMeta(0).data[sliderValue-1];
+    // perfChart.tooltip._active = [segment];
+    perfChart.tooltip.setActiveElements([
+      {datasetIndex: 0, index: sliderValue},
+      {datasetIndex: 1, index: sliderValue},
+    ]);
+    perfChart.setActiveElements([
+      {datasetIndex: 0, index: sliderValue},
+      {datasetIndex: 1, index: sliderValue},
+    ]);
+    perfChart.tooltip.update();
     perfChart.update();
-    // highlight point on pareto chart
-    let cost = Array.from(throughput.values()).slice(0,sliderValue);
-    let rsc = Array.from(resource.values()).map( (arr) => average(arr) ).slice(1,sliderValue);
-    paretoChart.options.scales.y.title.text = "Throughput (img/s)";
-    paretoChart.data.datasets[0].data = zip(rsc,cost);
-    paretoChart.update();
+    // // highlight point on pareto chart
+    // let cost = Array.from(throughput.values()).slice(0,sliderValue);
+    // let rsc = Array.from(resource.values()).map( (arr) => average(arr) ).slice(1,sliderValue);
+    // paretoChart.options.scales.y.title.text = "Throughput (img/s)";
+    // paretoChart.data.datasets[0].data = zip(rsc,cost);
+    // paretoChart.update();
     // change rsc chart
     let logFilePath = "log/"+sliderValue+".json";
     rsc_chart_render_once(logFilePath);
@@ -394,7 +408,7 @@ function sliderHandler() {
 graph_render_once("vis/0.dot");
 rsc_chart_render_once("log/0.json");
 perf_chart_render();
-pareto_chart_render();
+// pareto_chart_render();
 
 // range slider handler
 designSlide.addEventListener('change', sliderHandler);
@@ -402,11 +416,11 @@ designSlide.addEventListener('change', sliderHandler);
 // // set intervals for updating charts and graphs
 // setInterval(rsc_chart_render, 750);
 
-// set intervals for updating charts and graphs
-setInterval(perf_chart_render, 750);
+// // set intervals for updating charts and graphs
+// setInterval(perf_chart_render, 750);
 
-// set intervals for updating charts and graphs
-setInterval(pareto_chart_render, 750);
+// // set intervals for updating charts and graphs
+// setInterval(pareto_chart_render, 750);
 
 // // toggle graphUpdate flag
 // update_graph.addEventListener('click', function() {

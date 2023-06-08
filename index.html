@@ -64,7 +64,7 @@
     <div class="container-fluid text-center">
       <div class="row justify-content-md-center">
         <div class="col col-lg-9">
-          <p style="text-align:justify;">
+          <p class="fpgaconvnet-text">
           Convolutional Neural Networks (ConvNets/CNNs) are a powerful Deep Learning model which has demonstrated state-of-the-art accuracy in numerous AI tasks, from ConvNet-based object detectors to neural image captioning. In this context, FPGAs constitute a promising platform for the deployment of ConvNets which can satisfy the demanding performance needs and power constraints posed by emerging ConvNet applications. Nevertheless, the effective mapping of ConvNets on FPGAs requires from Deep Learning practitioners to have expertise in hardware design and familiarity with the FPGA development toolchains, and therefore poses a significant barrier. fpgaConvNet is a framework that automates the mapping of ConvNets onto reconfigurable FPGA-based platforms. Starting from a high-level description of a ConvNet model, fpgaConvNet considers both the input ConvNet workload and the application-level performance needs, including throughput, latency and multiobjective criteria, in order to generate optimised streaming accelerators tailored for the target FPGA. fpgaConvNet is being developed by the Intelligent Digital Systems Lab (iDSL) at Imperial College London.
           </p>
         </div>
@@ -75,7 +75,7 @@
     <div class="container-fluid mt-3 mb-3">
 
       <div class="row justify-content-md-center mb-3">
-        <div class="col col-lg-5">
+        <div class="col col-lg-6">
           <div class="container-fluid">
             <div class="d-inline-block">
               <h3>fpgaconvnet-model</h3>
@@ -84,15 +84,15 @@
               <button type="button" class="btn btn-dark" href="https://github.com/AlexMontgomerie/fpgaconvnet-model">Code</button>
             </div>
           </div>
-          <p style="text-align:justify;">
+          <p class="fpgaconvnet-text">
           The fpgaConvNet framework operates on an intermediate representation that describes the hardware of a mapped ML model.
           This component of the framework takes onnx files and creates the fpgaconvnet-ir used to generate hardware.
           Furthermore, the IR can also be used to generate high-level performance and resource models of the hardware.
           This IR is fundamental for rapid design space exploration.
           </p>
         </div>
-        <div class="col col-lg-4">
-          <img src="img/fpgaconvnet-model-diagram.png" height="185px" class="d-inline-block align-top fpgaconvnet-framework-image" alt="fpgaconvnet model diagram" loading="lazy">
+        <div class="col col-lg-3 justify-content-center">
+          <img src="img/fpgaconvnet-model-diagram.png" height="185px" class="d-inline-block align-top border border-dark fpgaconvnet-framework-image" alt="fpgaconvnet model diagram" loading="lazy">
           <!-- <img src="img/fpgaconvnet-model-diagram.png" height="150px" class="d-inline-block align-top" alt="fpgaconvnet model diagram" loading="lazy"> -->
         </div>
       </div>
@@ -107,7 +107,7 @@
               <button type="button" class="btn btn-dark" href="https://github.com/AlexMontgomerie/fpgaconvnet-hls">Code</button>
             </div>
           </div>
-          <p style="text-align:justify;">TBD</p>
+          <p class="fpgaconvnet-text">TBD</p>
         </div>
         <div class="col col-lg-4">
           <img src="img/fpgaconvnet-hls-diagram.png" height="185px" class="d-inline-block align-top fpgaconvnet-framework-image" alt="fpgaconvnet hls diagram" loading="lazy">
@@ -122,21 +122,25 @@
       <div class="row justify-content-md-center mb-3">
         <div class="col col-lg-4">
           <h3>Tutorial</h3>
-          <p>
+          <p class="fpgaconvnet-text">
           A series of tutorials have been created as a learning resource for those wishing to familiarise themselves with the toolflow.
           These can be found in the <a href="https://github.com/AlexMontgomerie/fpgaconvnet-tutorial">fpgaconvnet-tutorial</a> repository on GitHub.
           The repository contains the following tutorials,
           </p>
           <ul>
             <li>
-              <b><a href="https://github.com/AlexMontgomerie/fpgaconvnet-tutorial/blob/main/end-to-end-example.ipynb">End-to-End Example</a>:</b>
-                covers the steps of parsing an ONNX graph and interfacing with its performance and resource models.
-                It then shows the steps of optimising this hardware description, and generating an IP from it.
+              <p class="fpgaconvnet-text">
+                <b><a href="https://github.com/AlexMontgomerie/fpgaconvnet-tutorial/blob/main/end-to-end-example.ipynb">End-to-End Example</a>:</b>
+                  covers the steps of parsing an ONNX graph and interfacing with its performance and resource models.
+                  It then shows the steps of optimising this hardware description, and generating an IP from it.
+              </p>
             </li>
             <li>
-              <b><a href="https://github.com/AlexMontgomerie/fpgaconvnet-tutorial/blob/main/hardware-tutorial.ipynb">Hardware Tutorial</a>:</b>
-                gives the necessary steps to integrate the IP into an example system, which is then used to create a bitstream.
-                Example software is then given to collect performance results for the generated hardware.
+              <p class="fpgaconvnet-text">
+                <b><a href="https://github.com/AlexMontgomerie/fpgaconvnet-tutorial/blob/main/hardware-tutorial.ipynb">Hardware Tutorial</a>:</b>
+                  gives the necessary steps to integrate the IP into an example system, which is then used to create a bitstream.
+                  Example software is then given to collect performance results for the generated hardware.
+              </p>
             </li>
           </ul>
         </div>
@@ -173,12 +177,12 @@
           <div class="container-fluid">
             <canvas id="rscChart"></canvas>
           </div>
-          <div class="d-flex flex-wrap justify-content-left py-1 mb-1">
-            <h5>Pareto Front:</h5>
-          </div>
-          <div class="container-fluid">
-            <canvas id="paretoChart"></canvas>
-          </div>
+          <!-- <div class="d-flex flex-wrap justify-content-left py-1 mb-1"> -->
+          <!--   <h5>Pareto Front:</h5> -->
+          <!-- </div> -->
+          <!-- <div class="container-fluid"> -->
+          <!--   <canvas id="paretoChart"></canvas> -->
+          <!-- </div> -->
         </div>
         <div class="col col-lg-5 mb-3">
           <div class="d-flex flex-wrap justify-content-left">
@@ -187,7 +191,7 @@
 
             </p>
           </div>
-          <input type="range" class="form-range my-3" value="0" min="0" max="40" step="1" id="design-slide" data-bs-toggle="tooltip" data-bs-placement="top" title="0" style="--step:10; --min:20; --max:100">
+          <input type="range" class="form-range my-3" value="0" min="0" max="39" step="1" id="design-slide" data-bs-toggle="tooltip" data-bs-placement="top" title="0" style="--step:10; --min:20; --max:100">
           <div id="graph-wrapper" class="">
             <div class="" id="graph" style="text-align; center;"></div>
           </div>
@@ -201,7 +205,7 @@
         <div class="col col-lg-9">
           <h2>Designs</h2>
           <p>
-            We have made a number of designs available
+
           </p>
         </div>
       </div>
@@ -210,20 +214,24 @@
       <div class="row justify-content-md-center">
         <div class="col col-lg-9">
           <h3>MLPerf Tiny Benchmark</h3>
-          <p>
+          <p class="fpgaconvnet-text">
             The results presented in this table are from our submission to <a href="https://mlcommons.org/en/inference-tiny-11/">MLPerf Tiny</a>'s benchmark, as part of the round v1.1 results.
-            Instructions on how to use the bitstream can be found <a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet">here</a>.
+            The MLPerf Tiny v1.1 submission demonstrates the versatility of the fpgaConvNet toolflow by targeting a range of low-cost FPGAs, whilst achieving ultra low latency across these devices.
+            The obtained high performance is due to the exploration of the reconfigurability feature of FPGAs, allowing  the tool to create highly tailored accelerator designs for each specific task and device.
+            fpgaConvNet showcases the potential of FPGA devices for TinyML applications, as performance similar to that of ASICs is achieved whilst having the programmability of MCUs.
+
+
           </p>
           <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">Device</th>
                 <th scope="col">Task</th>
-                <th scope="col">Latency (ms)</th>
+                <th scope="col">Latency</th>
                 <th scope="col">LUT</th>
                 <th scope="col">DSP</th>
                 <th scope="col">BRAM</th>
-                <th scope="col">Freq. (MHz)</th>
+                <th scope="col">Freq.</th>
                 <th scope="col">Links</th>
               </tr>
             </thead>
@@ -231,12 +239,12 @@
               <tr>
                 <td>ZC706</td>
                 <td>Image Classification</td>
-                <td>0.15</td>
+                <td>147 us</td>
                 <td>108K</td>
                 <td>564</td>
                 <td>28</td>
-                <td>187</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td>187 MHz</td>
+                <td><a href="">code</a></td>
               </tr>
               <tr>
                 <td></td>
@@ -280,6 +288,9 @@
               </tr>
             </tbody>
           </table>
+          <p>
+            Instructions on how to use the bitstream can be found <a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet">here</a>.
+          </p>
         </div>
       </div>
 
@@ -308,24 +319,14 @@
                 <div class="col col-auto">
                   <h3>FCCM 2016</h3>
                 </div>
-                <p><em>Stylianos I. Venieris and Christos Savvas Bouganis</em> <a href="#">paper</a></p>
+                <p><em>Stylianos I. Venieris and Christos Savvas Bouganis</em></p>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....
                 </p>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>fpgaConvNet: A Framework for Mapping Convolutional Neural Networks on FPGAs</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FCCM 2016</h3>
-                </div>
-                <p><em>Stylianos I. Venieris and Christos Savvas Bouganis</em> <a href="#">paper</a></p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....
-                </p>
+                <ul class="timeline-links">
+                  <li><a href="#">paper</a></li>
+                  <li><a href="#">doi</a></li>
+                </ul>
               </div>
             </li>
           </ul>
@@ -335,6 +336,21 @@
     </div>
 
     <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">© 2023 Company, Inc</p>
+
+      <!-- <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> -->
+      <!--   <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg> -->
+      <!-- </a> -->
+
+      <!-- <ul class="nav col-md-4 justify-content-end"> -->
+      <!--   <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li> -->
+      <!--   <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li> -->
+      <!--   <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li> -->
+      <!--   <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li> -->
+      <!--   <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li> -->
+      <!-- </ul> -->
+    </footer>
 
     <!-- Post scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

@@ -83,3 +83,15 @@ h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
+.timeline-links {
+  list-style: none;
+}
+
+.timeline-links > li {
+  display: inline;
+  margin-right: 5px;
+}
+
+.fpgaconvnet-text {
+  text-align:justify;
+}
