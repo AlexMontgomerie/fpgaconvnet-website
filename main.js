@@ -40,7 +40,7 @@ for (let i = 0; i < 40; i++) {
 
   // load the log file
   let logFilePath = "log/"+i+".json";
-  let data = loadFile(logFilePath);
+  let data = loadFile(logFilePath, false);
   let log = JSON.parse(data);
 
   // update the maps
@@ -81,12 +81,12 @@ var graphviz = d3.select("#graph").graphviz()
 ;
 
 // function to load local file
-function loadFile(filePath) {
+function loadFile(filePath, is_async=false) {
   if(filePath == "vis/..") {
     filePath = "vis/base.dot";
   }
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", filePath, false);
+  xmlhttp.open("GET", filePath, is_async);
   xmlhttp.send();
   if (xmlhttp.status==200) {
     return xmlhttp.responseText;
@@ -327,7 +327,7 @@ function attributer(datum, index, nodes) {
 
 // function to render a given dot-graph file
 function graph_render_once(filePath) {
-    let data = loadFile(filePath);
+    let data = loadFile(filePath, false);
     return graphviz
       .fit(true)
       .width(graphInnerWidth)
@@ -341,7 +341,7 @@ function graph_render_once(filePath) {
 function startOptimiser() {
     // start the optimiser
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", `run-optimiser.php?model=${model.files[0].name}&platform=${platform.value}&objective=${objective.value}&optimiser=${optimiser.value}&batch_size=${batch_size.value}`);
+    xmlhttp.open("GET", `run-optimiser.php?model=${model.files[0].name}&platform=${platform.value}&objective=${objective.value}&optimiser=${optimiser.value}&batch_size=${batch_size.value}`, true);
     xmlhttp.send(null);
     // clear throughput and latency
     throughput.clear();
@@ -360,7 +360,7 @@ function startOptimiser() {
 // stop optimiser button
 function stopOptimiser() {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", "stop-optimiser.php");
+  xmlhttp.open("GET", "stop-optimiser.php", true);
   xmlhttp.send(null);
   // set flags
   isRunning = false;

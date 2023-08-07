@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A website detailing the open-source fpgaConvNet toolflow.">
     <title>fpgaConvNet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,28 +62,49 @@
     </div>
 
     <!-- Overview paragraph -->
-    <div class="container-fluid text-center">
+    <div class="container-fluid">
       <div class="row justify-content-md-center">
-        <div class="col col-lg-9">
+        <div class="col col-lg-8">
           <p class="fpgaconvnet-text">
-          Convolutional Neural Networks (ConvNets/CNNs) are a powerful Deep Learning model which has demonstrated state-of-the-art accuracy in numerous AI tasks, from ConvNet-based object detectors to neural image captioning. In this context, FPGAs constitute a promising platform for the deployment of ConvNets which can satisfy the demanding performance needs and power constraints posed by emerging ConvNet applications. Nevertheless, the effective mapping of ConvNets on FPGAs requires from Deep Learning practitioners to have expertise in hardware design and familiarity with the FPGA development toolchains, and therefore poses a significant barrier. fpgaConvNet is a framework that automates the mapping of ConvNets onto reconfigurable FPGA-based platforms. Starting from a high-level description of a ConvNet model, fpgaConvNet considers both the input ConvNet workload and the application-level performance needs, including throughput, latency and multiobjective criteria, in order to generate optimised streaming accelerators tailored for the target FPGA. fpgaConvNet is being developed by the Intelligent Digital Systems Lab (iDSL) at Imperial College London.
+          As machine learning has become a fundamental workload in today's digital systems, there has been increasing demand for highly efficient hardware to run these workloads.
+          The work done at the Intelligent Digital Systems Lab at Imperial College London aims to address this demand with fpgaConvNet: a toolflow for designing Convolutional Neural Network (CNN) accelerators for FPGAs with state-of-the-art performance and efficiency.
+          FPGA devices have long been considered a highly performant and efficient platform, where a designer can exploit the highly configurable fine-grain building blocks to produce customised hardware.
+          However, many current FPGA designs for AI applications do not exploit these features, opting for a monolithic accelerator approach with very little specialisation towards the particular workload.
+          With the fpgaConvNet toolflow, accelerator designs are customised to a specific CNN workload, mapping each operation in the CNN model to a dedicated hardware block.
+          This leads to a deeply pipelined design with extremely high throughput and ultra low latency.
+          The toolflow can be used to accelerate a number of applications, such as the ones listed below.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-8">
+          <p>
+            <ul class="list-group list-group-horizontal-lg">
+              <li class="list-group-item"><b>Image Classification</b></li>
+              <li class="list-group-item"><b>Object Detection</b></li>
+              <li class="list-group-item"><b>Human Action Recognition</b></li>
+              <li class="list-group-item"><b>Image Segmentation</b></li>
+              <li class="list-group-item"><b>Pose Estimation</b></li>
+              <li class="list-group-item"><b>Key Word Spotting</b></li>
+              <li class="list-group-item"><b>Anomaly Detection</b></li>
+            </ul>
           </p>
         </div>
       </div>
     </div>
 
     <!-- Framework Components -->
-    <div class="container-fluid mt-3 mb-3">
+    <div class="container-fluid mt-5 mb-3">
 
       <div class="row justify-content-md-center mb-3">
         <div class="col col-lg-6">
           <div class="container-fluid">
             <div class="d-inline-block">
-              <h3>fpgaconvnet-model</h3>
+              <h3><a href="https://github.com/AlexMontgomerie/fpgaconvnet-model">fpgaconvnet-model</a></h3>
             </div>
-            <div class="d-inline-block ms-4">
-              <button type="button" class="btn btn-dark" href="https://github.com/AlexMontgomerie/fpgaconvnet-model">Code</button>
-            </div>
+            <!-- <div class="d-inline-block ms-4"> -->
+            <!--   <button type="button" class="btn btn-dark" href="https://github.com/AlexMontgomerie/fpgaconvnet-model">Code</button> -->
+            <!-- </div> -->
           </div>
           <p class="fpgaconvnet-text">
           The fpgaConvNet framework operates on an intermediate representation that describes the hardware of a mapped ML model.
@@ -91,34 +113,57 @@
           This IR is fundamental for rapid design space exploration.
           </p>
         </div>
-        <div class="col col-lg-3 justify-content-center">
+        <div class="d-flex col col-lg-2 justify-content-center">
           <img src="img/fpgaconvnet-model-diagram.png" height="185px" class="d-inline-block align-top border border-dark fpgaconvnet-framework-image" alt="fpgaconvnet model diagram" loading="lazy">
-          <!-- <img src="img/fpgaconvnet-model-diagram.png" height="150px" class="d-inline-block align-top" alt="fpgaconvnet model diagram" loading="lazy"> -->
         </div>
       </div>
 
       <div class="row justify-content-md-center mb-3">
-        <div class="col col-lg-5">
+        <div class="d-flex col col-lg-2 justify-content-center">
+          <img src="img/fpgaconvnet-hls-layout.png" height="185px" class="d-inline-block align-top border border-dark fpgaconvnet-framework-image" alt="fpgaconvnet hls diagram" loading="lazy">
+        </div>
+        <div class="col col-lg-6">
           <div class="container-fluid">
             <div class="d-inline-block">
-              <h3>fpgaconvnet-hls</h3>
+              <h3><a href="https://github.com/AlexMontgomerie/fpgaconvnet-hls">fpgaconvnet-hls</a></h3>
             </div>
-            <div class="d-inline-block ms-4">
-              <button type="button" class="btn btn-dark" href="https://github.com/AlexMontgomerie/fpgaconvnet-hls">Code</button>
-            </div>
+            <!-- <div class="d-inline-block ms-4"> -->
+            <!--   <button type="button" class="btn btn-dark" href="https://github.com/AlexMontgomerie/fpgaconvnet-hls">Code</button> -->
+            <!-- </div> -->
           </div>
-          <p class="fpgaconvnet-text">TBD</p>
+          <p class="fpgaconvnet-text">
+          Using a configuration generated by the fpgaconvnet-model tool, the corresponding hardware can be generated by the fpgaconvnet-hls tool.
+          This repository contains of selection of highly parametrised hardware building blocks for common CNN layers (Convolution, Pooling, ReLU, etc).
+          A dataflow architecture is generated by instantiating and connecting these building blocks together based on the configuration file.
+          </p>
         </div>
-        <div class="col col-lg-4">
-          <img src="img/fpgaconvnet-hls-diagram.png" height="185px" class="d-inline-block align-top fpgaconvnet-framework-image" alt="fpgaconvnet hls diagram" loading="lazy">
-          <!-- <img src="img/fpgaconvnet-model-diagram.png" height="150px" class="d-inline-block align-top" alt="fpgaconvnet model diagram" loading="lazy"> -->
+      </div>
+
+      <div class="row justify-content-md-center mb-3">
+        <div class="d-flex col col-lg-8">
+          <h3><a href="https://github.com/AlexMontgomerie/fpgaconvnet-optimiser">fpgaconvnet-optimiser</a> // <a href="https://github.com/AlexMontgomerie/samo">samo</a></h3>
+        </div>
+      </div>
+      <div class="row justify-content-md-center mb-3">
+        <div class="d-flex col col-lg-8">
+          <p class="fpgaconvnet-text">
+          The design space of streaming architectures are immense, with even seemingly small networks such as LeNet having 10<sup>13</sup> possible design points, taking 89 centuries to evaluate every single one.
+          The fpgaConvNet toolflow allows designers to automate the design point selection process, using optimisation solvers tailored to the problem.
+          SAMO is a framework that generalises the optimisation problem across streaming architectures, providing a toolflow for both FINN and HLS4ML.
+          the fpgaconvnet-optimiser project is specialised to the fpgaConvNet architecture, finding even better design points.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-md-center mb-3">
+        <div class="d-flex col col-lg-8 justify-content-center">
+          <img src="img/fpgaconvnet-overview.png" width="100%" class="d-inline-block align-top fpgaconvnet-framework-image" alt="fpgaconvnet hls diagram" loading="lazy">
         </div>
       </div>
 
     </div>
 
     <!-- Tutorial -->
-    <div class="container-fluid mt-3 mb-3" id="fpgaconvnet-tutorial">
+    <div class="container-fluid mt-5 mb-3" id="fpgaconvnet-tutorial">
       <div class="row justify-content-md-center mb-3">
         <div class="col col-lg-4">
           <h3>Tutorial</h3>
@@ -144,21 +189,22 @@
             </li>
           </ul>
         </div>
-        <div class="col col-lg-5 tutorial-container">
+        <div class="col col-lg-4 tutorial-container">
           <iframe class="tutorial-code" src="tutorial.html" seamless></iframe>
         </div>
       </div>
     </div>
 
     <!-- Optimisation visualisation -->
-    <div class="container-fluid" id="fpgaconvnet-visualisation">
+    <div class="container-fluid mt-5 mb-3" id="fpgaconvnet-visualisation">
       <div class="row justify-content-md-center">
-        <div class="col col-lg-9">
+        <div class="col col-lg-8">
           <h2>Optimisation Visualisation</h2>
-          <p>
+          <p class="fpgaconvnet-text">
             To understand how the architecture generated by fpgaConvNet as well as the optimisation steps taken, an interactive visualisation of the design space exploration is displayed below.
-          </p>
-          <p>
+            By moving the interactive slide bar, the state of the optimised design can be seen.
+            The performance graph shows the change in performance in throughput and latency across the optimisers steps, with the current visualised point highlighted.
+            Likewise, the resources and block diagram for the chosen point are also shown.
             This visualisation is created for the model LeNet targeting a ZedBoard.
           </p>
         </div>
@@ -177,19 +223,10 @@
           <div class="container-fluid">
             <canvas id="rscChart"></canvas>
           </div>
-          <!-- <div class="d-flex flex-wrap justify-content-left py-1 mb-1"> -->
-          <!--   <h5>Pareto Front:</h5> -->
-          <!-- </div> -->
-          <!-- <div class="container-fluid"> -->
-          <!--   <canvas id="paretoChart"></canvas> -->
-          <!-- </div> -->
         </div>
-        <div class="col col-lg-5 mb-3">
+        <div class="col col-lg-4 mb-3">
           <div class="d-flex flex-wrap justify-content-left">
             <h5>Hardware Model:</h5>
-            <p>
-
-            </p>
           </div>
           <input type="range" class="form-range my-3" value="0" min="0" max="39" step="1" id="design-slide" data-bs-toggle="tooltip" data-bs-placement="top" title="0" style="--step:10; --min:20; --max:100">
           <div id="graph-wrapper" class="">
@@ -200,11 +237,11 @@
     </div>
 
     <!-- Results Table -->
-    <div class="container-fluid mt-5 mb-5" id="fpgaconvnet-designs">
+    <div class="container-fluid mt-5 mb-4" id="fpgaconvnet-designs">
       <div class="row justify-content-md-center">
-        <div class="col col-lg-9">
+        <div class="col col-lg-8">
           <h2>Designs</h2>
-          <p>
+          <p class="fpgaconvnet-text">
 
           </p>
         </div>
@@ -212,7 +249,7 @@
 
       <!-- TinyML -->
       <div class="row justify-content-md-center">
-        <div class="col col-lg-9">
+        <div class="col col-lg-8">
           <h3>MLPerf Tiny Benchmark</h3>
           <p class="fpgaconvnet-text">
             The results presented in this table are from our submission to <a href="https://mlcommons.org/en/inference-tiny-11/">MLPerf Tiny</a>'s benchmark, as part of the round v1.1 results.
@@ -230,7 +267,7 @@
                 <th scope="col">DSP</th>
                 <th scope="col">BRAM</th>
                 <th scope="col">Freq.</th>
-                <th scope="col">Links</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -242,7 +279,7 @@
                 <td>564</td>
                 <td>281</td>
                 <td>187 MHz</td>
-                <td><a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zc706/ic">link</a></td>
               </tr>
               <tr>
                 <td></td>
@@ -252,7 +289,7 @@
                 <td>564</td>
                 <td>366</td>
                 <td>200 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zc706/vww">link</a></td>
               </tr>
               <tr>
                 <td>ZedBoard</td>
@@ -262,7 +299,7 @@
                 <td>211</td>
                 <td>93</td>
                 <td>143 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zedboard/ic">link</a></td>
               </tr>
               <tr>
                 <td></td>
@@ -272,7 +309,7 @@
                 <td>189</td>
                 <td>123</td>
                 <td>111 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zedboard/vww">link</a></td>
               </tr>
               <tr>
                 <td></td>
@@ -282,7 +319,7 @@
                 <td>188</td>
                 <td>97</td>
                 <td>143 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zedboard/kws">link</a></td>
               </tr>
               <tr>
                 <td>ZyBo</td>
@@ -292,7 +329,7 @@
                 <td>78</td>
                 <td>36</td>
                 <td>125 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zybo/ic">link</a></td>
               </tr>
               <tr>
                 <td></td>
@@ -302,7 +339,7 @@
                 <td>60</td>
                 <td>16</td>
                 <td>125 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/zybo/kws">link</a></td>
               </tr>
               <tr>
                 <td>Cora-Z7</td>
@@ -312,12 +349,12 @@
                 <td>55</td>
                 <td>28</td>
                 <td>143 MHz</td>
-                <td><a href="">code</a>&nbsp;<a href="">link</a></td>
+                <td><a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet/code/cora-z7/kws">link</a></td>
               </tr>
             </tbody>
           </table>
           <p>
-            Instructions on how to use the bitstream can be found <a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet">here</a>.
+            Instructions on how to use the bitstream can be found in the MLPerf-Tiny <a href="https://github.com/mlcommons/submissions_tiny_v1.1/tree/main/closed/fpgaconvnet">repo</a>.
           </p>
         </div>
       </div>
@@ -328,17 +365,19 @@
     <div class="container-fluid mt-5 mb-5" id="fpgaconvnet-timeline">
 
       <div class="row justify-content-md-center">
-        <div class="col col-lg-9">
+        <div class="col col-lg-8">
           <h2>Research</h2>
-          <p>
+          <p class="fpgaconvnet-text">
             Since the initial conception of the fpgaConvNet toolflow, there have been many research projects which have contributed to and utilised the framework.
+            The core development of the toolflow has lead to innovations in Streaming Architecture design as well as Design Space Exploration.
+            This in turn has enabled novel contributions in several application domains, broadening the scope of the toolflow.
             The growing list of research outcomes are listed below.
           </p>
         </div>
       </div>
 
       <div class="row justify-content-md-center">
-        <div class="col col-lg-7">
+        <div class="col col-lg-6">
           <ul class="timeline">
             <li>
               <div class="row">
@@ -480,7 +519,7 @@
                 <p><em>Petros Toupas*, Alexander Montgomerie-Corcoran*, Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
                 <p>
                   A new architecture based off of the design principles of fpgaConvNet is developed in this work, but has the benefit of runtime parameter reconfiguration.
-                  This makes it suitable for low-latency applications as it avoids the need to do full bitstream reconfiguration.
+                  This makes it suitable for low-latency applications as it avoids the need to do full bitstream reconfiguration, which is necessary for Human Action Recognition (HAR).
                 </p>
                 <ul class="timeline-links">
                   <!-- <li><a href="#">paper</a></li> -->
@@ -513,7 +552,13 @@
 
     </div>
 
-    <!-- <!-1- Footer -1-> -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 me-2 mb-md-3 text-muted">Designed by Alexander Montgomerie-Corcoran</span>
+      </div>
+    </footer>
+
+    <!-- Footer -->
     <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> -->
     <!--   <p class="col-md-4 mb-0 text-body-secondary">Designed by Alexander Montgomerie-Corcoran</p> -->
 
