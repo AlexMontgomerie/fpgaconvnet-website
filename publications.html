@@ -74,241 +74,21 @@
       <div class="row justify-content-md-center">
         <div class="col col-lg-6">
           <ul class="timeline">
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>fpgaConvNet: A Framework for Mapping Convolutional Neural Networks on FPGAs</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FCCM 2016</h3>
-                </div>
-                <p><em>Stylianos I. Venieris and Christos-Savvas Bouganis</em></p>
-                <p class="fpgaconvnet-text">
-                  The original paper detailing the design principles of fpgaConvNet, such as the application of Synchronous Dataflow (SDF) performance modelling for streaming architectures, and high-level resource estimation.
-                  This work also explores the use of bitstream reconfiguration for high-throughput applications.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://ieeexplore.ieee.org/document/7544745">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>Latency-Driven Design for FPGA-based Convolutional Neural Networks</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPL 2017</h3>
-                </div>
-                <p><em>Stylianos I. Venieris and Christos-Savvas Bouganis</em></p>
-                <p class="fpgaconvnet-text">
-                  This work explores methods of targeting latency for fpgaConvNet by constraining the design to a single bitstream, and making use of runtime weight parameter reconfiguration.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.org/10.23919/FPL.2017.8056828">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>fpgaConvNet: Mapping Regular and Irregular Convolutional Neural Networks on FPGAs</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>TNNLS 2018</h3>
-                </div>
-                <p><em>Stylianos I. Venieris and Christos-Savvas Bouganis</em></p>
-                <p class="fpgaconvnet-text">
-                  The scope of fpgaConvNet is expanded to support more irregular network styles such as GoogleNet and ResNet, by including element-wise and concatenation layers in the design.
-                  This work addresses the design space exploration aspect of including multiple branches in the model.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.org/10.1109/TNNLS.2018.2844093">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>Power-Aware FPGA Mapping of Convolutional Neural Networks</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPT 2019</h3>
-                </div>
-                <p><em>Alexander Montgomerie-Corcoran and Christos-Savvas Bouganis</em></p>
-                <p>
-                  This work explores the power consumption aspect of fpgaConvNet, producing high-level models of how design choices affect the power consumption of the accelerator.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.org/10.1109/ICFPT47387.2019.00059">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>DEF: Differential Encoding of Featuremaps for Low Power Convolutional Neural Network Accelerators</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>ASP-DAC 2021</h3>
-                </div>
-                <p><em>Alexander Montgomerie-Corcoran and Christos-Savvas Bouganis</em></p>
-                <p>
-                  In this paper, a novel coding scheme is introduced which exploits the properties of feature maps to reduce the activity along off-chip memory data busses, leading to lower system power consumption.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.org/10.1145/3394885.3431576">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>StreamSVD: Low-rank Approximation and Streaming Accelerator Co-design</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPT 2021</h3>
-                </div>
-                <p><em>Zhewen Yu and Christos-Savvas Bouganis</em></p>
-                <p>
-                  This work looks into methods of compressing ML models by using Singular Value Decomposition (SVD) to reduce the number of weight parameters required.
-                  fpgaConvNet was used to show how this method benefits ML accelerators.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.ieeecomputersociety.org/10.1109/FPL57034.2022.00069">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>SAMO: Optimised Mapping of Convolutional Neural Networks to Streaming Architectures</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPL 2022</h3>
-                </div>
-                <p><em>Alexander Montgomerie-Corcoran*, Zhewen Yu* and Christos-Savvas Bouganis</em></p>
-                <p>
-                  This work builds on the capabilities of fpgaConvNet's design space exploration, by proposing two optimisers (simulated annealing and rule-based), as well as expanding the scope to other FPGA-based ML accelerator frameworks, namely FINN and HLS4ML.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.ieeecomputersociety.org/10.1109/FPL57034.2022.00069">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>HARFLOW3D: A Latency-Oriented 3D-CNN Accelerator Toolflow for HAR on FPGA Devices</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FCCM 2023</h3>
-                </div>
-                <p><em>Petros Toupas*, Alexander Montgomerie-Corcoran*, Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
-                <p>
-                  A new architecture based off of the design principles of fpgaConvNet is developed in this work, but has the benefit of runtime parameter reconfiguration.
-                  This makes it suitable for low-latency applications as it avoids the need to do full bitstream reconfiguration, which is necessary for Human Action Recognition (HAR).
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.org/10.48550/arXiv.2303.17218">doi</a></li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>ATHEENA: A Toolflow for Hardware Early-Exit Network Automation</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FCCM 2023</h3>
-                </div>
-                <p><em>Benjamin Biggs, Christos-Savvas Bouganis, George A. Constantinides</em></p>
-                <p>
-                  ATHEENA looks into using early exit networks with fpgaConvNet, and the challenges associated with handling early exit branches.
-                </p>
-                <ul class="timeline-links">
-                  <!-- <li><a href="#">paper</a></li> -->
-                  <li><a href="https://doi.org/10.48550/arXiv.2304.08400">doi</a></li>
-                </ul>
-              </div>
-            </li>
 
             <li>
               <div class="row">
                 <div class="col">
-                  <h5>FMM-X3D: FPGA-based modelling and mapping of X3D for Human Action Recognition</h5>
+                  <h5>AutoWS: Automate Weights Streaming in Layer-wise Pipelined DNN Accelerators</h5>
                 </div>
                 <div class="col col-auto">
-                  <h3>ASAP 2023</h3>
+                  <h3>DATE 2024</h3>
                 </div>
-                <p><em>Petros Toupas,  Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
+                <p><em>Zhewen Yu and Christos-Savvas Bouganis </em></p>
                 <p>
-                  This study bridges the gap between recent developments in computer vision on videos and their deployment and applications on FPGAs by optimising and mapping a state-of-the-art 3D-CNN model (X3D) for human action recognition (HAR).
+                  A memory management methodology for balancing the allocation of weights both on-chip and off-chip.
                 </p>
                 <ul class="timeline-links">
-                  <li><a href="https://arxiv.org/abs/2305.18479">preprint</a></li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>PASS: Exploiting Post-Activation Sparsity in Streaming Architectures for CNN Acceleration</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPL 2023</h3>
-                </div>
-                <p><em>Alexander Montgomerie-Corcoran*, Zhewen Yu*, Jianyi Cheng, Christos-Savvas Bouganis</em></p>
-                <p>
-                  this work addresses the challenges associated with exploiting post-activation sparsity for performance gains in streaming CNN accelerators.
-                </p>
-                <ul class="timeline-links">
-                  <li><a href="https://arxiv.org/abs/2307.07821">preprint</a></li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>fpgaHART: A toolflow for throughput-oriented acceleration of 3D CNNs for HAR onto FPGAs</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPL 2023</h3>
-                </div>
-                <p><em>Petros Toupas,  Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
-                <p>
-                  Optimising and mapping state-of-the-art 3D-CNN models for human action recognition (HAR) while aiming for throughput-oriented designs.
-                </p>
-                <ul class="timeline-links">
-                  <li><a href="https://arxiv.org/abs/2305.19896">preprint</a></li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <div class="row">
-                <div class="col">
-                  <h5>Mixed-TD: Efficient Neural Network Accelerator with Layer-Specific Tensor Decomposition</h5>
-                </div>
-                <div class="col col-auto">
-                  <h3>FPL 2023</h3>
-                </div>
-                <p><em>Zhewen Yu, and Christos-Savvas Bouganis </em></p>
-                <p>
-                  Tensor Decomposition methods for approximating CNN parameters and improving accelerator performance.
-                </p>
-                <ul class="timeline-links">
-                  <li><a href="https://arxiv.org/abs/2306.05021">preprint</a></li>
+                  <li><a href="https://arxiv.org/abs/2311.04764">preprint</a></li>
                 </ul>
               </div>
             </li>
@@ -334,17 +114,246 @@
             <li>
               <div class="row">
                 <div class="col">
-                  <h5>AutoWS: Automate Weights Streaming in Layer-wise Pipelined DNN Accelerators</h5>
+                  <h5>Mixed-TD: Efficient Neural Network Accelerator with Layer-Specific Tensor Decomposition</h5>
                 </div>
                 <div class="col col-auto">
-                  <h3>DATE 2024</h3>
+                  <h3>FPL 2023</h3>
                 </div>
-                <p><em>Zhewen Yu and Christos-Savvas Bouganis </em></p>
+                <p><em>Zhewen Yu, and Christos-Savvas Bouganis </em></p>
                 <p>
-                  A memory management methodology for balancing the allocation of weights both on-chip and off-chip.
+                  Tensor Decomposition methods for approximating CNN parameters and improving accelerator performance.
                 </p>
                 <ul class="timeline-links">
-                  <li><a href="https://arxiv.org/abs/2311.04764">preprint</a></li>
+                  <li><a href="https://arxiv.org/abs/2306.05021">preprint</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>fpgaHART: A toolflow for throughput-oriented acceleration of 3D CNNs for HAR onto FPGAs</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FPL 2023</h3>
+                </div>
+                <p><em>Petros Toupas,  Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
+                <p>
+                  Optimising and mapping state-of-the-art 3D-CNN models for human action recognition (HAR) while aiming for throughput-oriented designs.
+                </p>
+                <ul class="timeline-links">
+                  <li><a href="https://arxiv.org/abs/2305.19896">preprint</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>PASS: Exploiting Post-Activation Sparsity in Streaming Architectures for CNN Acceleration</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FPL 2023</h3>
+                </div>
+                <p><em>Alexander Montgomerie-Corcoran*, Zhewen Yu*, Jianyi Cheng, Christos-Savvas Bouganis</em></p>
+                <p>
+                  this work addresses the challenges associated with exploiting post-activation sparsity for performance gains in streaming CNN accelerators.
+                </p>
+                <ul class="timeline-links">
+                  <li><a href="https://arxiv.org/abs/2307.07821">preprint</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>FMM-X3D: FPGA-based modelling and mapping of X3D for Human Action Recognition</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>ASAP 2023</h3>
+                </div>
+                <p><em>Petros Toupas,  Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
+                <p>
+                  This study bridges the gap between recent developments in computer vision on videos and their deployment and applications on FPGAs by optimising and mapping a state-of-the-art 3D-CNN model (X3D) for human action recognition (HAR).
+                </p>
+                <ul class="timeline-links">
+                  <li><a href="https://arxiv.org/abs/2305.18479">preprint</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>ATHEENA: A Toolflow for Hardware Early-Exit Network Automation</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FCCM 2023</h3>
+                </div>
+                <p><em>Benjamin Biggs, Christos-Savvas Bouganis, George A. Constantinides</em></p>
+                <p>
+                  ATHEENA looks into using early exit networks with fpgaConvNet, and the challenges associated with handling early exit branches.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.org/10.48550/arXiv.2304.08400">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>HARFLOW3D: A Latency-Oriented 3D-CNN Accelerator Toolflow for HAR on FPGA Devices</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FCCM 2023</h3>
+                </div>
+                <p><em>Petros Toupas*, Alexander Montgomerie-Corcoran*, Christos-Savvas Bouganis, Dimitrios Tzovaras</em></p>
+                <p>
+                  A new architecture based off of the design principles of fpgaConvNet is developed in this work, but has the benefit of runtime parameter reconfiguration.
+                  This makes it suitable for low-latency applications as it avoids the need to do full bitstream reconfiguration, which is necessary for Human Action Recognition (HAR).
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.org/10.48550/arXiv.2303.17218">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>SAMO: Optimised Mapping of Convolutional Neural Networks to Streaming Architectures</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FPL 2022</h3>
+                </div>
+                <p><em>Alexander Montgomerie-Corcoran*, Zhewen Yu* and Christos-Savvas Bouganis</em></p>
+                <p>
+                  This work builds on the capabilities of fpgaConvNet's design space exploration, by proposing two optimisers (simulated annealing and rule-based), as well as expanding the scope to other FPGA-based ML accelerator frameworks, namely FINN and HLS4ML.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.ieeecomputersociety.org/10.1109/FPL57034.2022.00069">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>StreamSVD: Low-rank Approximation and Streaming Accelerator Co-design</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FPT 2021</h3>
+                </div>
+                <p><em>Zhewen Yu and Christos-Savvas Bouganis</em></p>
+                <p>
+                  This work looks into methods of compressing ML models by using Singular Value Decomposition (SVD) to reduce the number of weight parameters required.
+                  fpgaConvNet was used to show how this method benefits ML accelerators.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.ieeecomputersociety.org/10.1109/FPL57034.2022.00069">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>DEF: Differential Encoding of Featuremaps for Low Power Convolutional Neural Network Accelerators</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>ASP-DAC 2021</h3>
+                </div>
+                <p><em>Alexander Montgomerie-Corcoran and Christos-Savvas Bouganis</em></p>
+                <p>
+                  In this paper, a novel coding scheme is introduced which exploits the properties of feature maps to reduce the activity along off-chip memory data busses, leading to lower system power consumption.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.org/10.1145/3394885.3431576">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>Power-Aware FPGA Mapping of Convolutional Neural Networks</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FPT 2019</h3>
+                </div>
+                <p><em>Alexander Montgomerie-Corcoran and Christos-Savvas Bouganis</em></p>
+                <p>
+                  This work explores the power consumption aspect of fpgaConvNet, producing high-level models of how design choices affect the power consumption of the accelerator.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.org/10.1109/ICFPT47387.2019.00059">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>fpgaConvNet: Mapping Regular and Irregular Convolutional Neural Networks on FPGAs</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>TNNLS 2018</h3>
+                </div>
+                <p><em>Stylianos I. Venieris and Christos-Savvas Bouganis</em></p>
+                <p class="fpgaconvnet-text">
+                  The scope of fpgaConvNet is expanded to support more irregular network styles such as GoogleNet and ResNet, by including element-wise and concatenation layers in the design.
+                  This work addresses the design space exploration aspect of including multiple branches in the model.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.org/10.1109/TNNLS.2018.2844093">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>Latency-Driven Design for FPGA-based Convolutional Neural Networks</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FPL 2017</h3>
+                </div>
+                <p><em>Stylianos I. Venieris and Christos-Savvas Bouganis</em></p>
+                <p class="fpgaconvnet-text">
+                  This work explores methods of targeting latency for fpgaConvNet by constraining the design to a single bitstream, and making use of runtime weight parameter reconfiguration.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://doi.org/10.23919/FPL.2017.8056828">doi</a></li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="row">
+                <div class="col">
+                  <h5>fpgaConvNet: A Framework for Mapping Convolutional Neural Networks on FPGAs</h5>
+                </div>
+                <div class="col col-auto">
+                  <h3>FCCM 2016</h3>
+                </div>
+                <p><em>Stylianos I. Venieris and Christos-Savvas Bouganis</em></p>
+                <p class="fpgaconvnet-text">
+                  The original paper detailing the design principles of fpgaConvNet, such as the application of Synchronous Dataflow (SDF) performance modelling for streaming architectures, and high-level resource estimation.
+                  This work also explores the use of bitstream reconfiguration for high-throughput applications.
+                </p>
+                <ul class="timeline-links">
+                  <!-- <li><a href="#">paper</a></li> -->
+                  <li><a href="https://ieeexplore.ieee.org/document/7544745">doi</a></li>
                 </ul>
               </div>
             </li>
