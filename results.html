@@ -15,6 +15,11 @@
     <!-- <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include DataTables CSS and JS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
   </head>
   <body>
 
@@ -38,7 +43,7 @@
             <a class="nav-link fpgaconvnet-nav-link" id="fpgaconvnet-nav-link" aria-current="page" href="about.html">About</a>
             <a class="nav-link fpgaconvnet-nav-link" id="fpgaconvnet-nav-link" aria-current="page" href="docs.html">Docs</a>
             <a class="nav-link active fpgaconvnet-nav-link" id="fpgaconvnet-nav-link" aria-current="page" href="results.html">Results</a>
-            <a class="nav-link fpgaconvnet-nav-link" id="fpgaconvnet-nav-link" aria-current="page" href="publications.html">Research</a>
+            <a class="nav-link fpgaconvnet-nav-link" id="fpgaconvnet-nav-link" aria-current="page" href="publications.html">Publications</a>
             <a class="nav-link fpgaconvnet-nav-link" id="fpgaconvnet-nav-link" aria-current="page" href="visualisation.html">Visualisation</a>
           </div>
         </div>
@@ -176,6 +181,335 @@
         </div>
       </div>
 
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-6">
+          <h3>Latest Research Results</h3>
+          <p class="fpgaconvnet-text">
+            The results presented in this table are from our recently published research papers.
+          </p>
+          <table table id="myTable" class="display">
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Task</th>
+                <th scope="col">Network</th>
+                <th scope="col">Accuracy</th>
+                <th scope="col">Latency</th>
+                <th scope="col">Throughput</th>
+                <th scope="col">Device</th>
+                <th scope="col">LUT</th>
+                <th scope="col">DSP</th>
+                <th scope="col">BRAM18k</th>
+                <th scope="col">URAM</th>
+                <th scope="col">Freq.</th>
+                <th scope="col">Cite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- SMOF -->
+              <tr>
+                <td>2024</td>
+                <td>CamVid</td>
+                <td>UNet</td>
+                <td>71.75%</td>
+                <td>-</td>
+                <td>16.96fps (2206GOP/s)</td>
+                <td>VCU1525</td>
+                <td>993k</td>
+                <td>6019</td>
+                <td>3715</td>
+                <td>864</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2403.18921">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>CamVid</td>
+                <td>UNet</td>
+                <td>71.75%</td>
+                <td>-</td>
+                <td>21.21fps (2758GOP/s)</td>
+                <td>U200</td>
+                <td>1040k</td>
+                <td>6062</td>
+                <td>3654</td>
+                <td>864</td>
+                <td>250MHz</td>
+                <td><a href="https://arxiv.org/abs/2403.18921">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>CamVid</td>
+                <td>UNet</td>
+                <td>71.75%</td>
+                <td>-</td>
+                <td>1.28fps (166GOP/s)</td>
+                <td>ZCU102</td>
+                <td>213k</td>
+                <td>1461</td>
+                <td>1368</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2403.18921">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>COCO</td>
+                <td>YOLOv8n</td>
+                <td>35.10%</td>
+                <td>-</td>
+                <td>184.27fps (808GOP/s)</td>
+                <td>VCU118</td>
+                <td>543k</td>
+                <td>5061</td>
+                <td>1813</td>
+                <td>431</td>
+                <td>250MHz</td>
+                <td><a href="https://arxiv.org/abs/2403.18921">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>UCF101</td>
+                <td>X3D-M</td>
+                <td>96.29%</td>
+                <td>-</td>
+                <td>13.44fps (86GOP/s)</td>
+                <td>ZCU102</td>
+                <td>235k</td>
+                <td>932</td>
+                <td>857</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2403.18921">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>BraTS2020</td>
+                <td>UNet3D</td>
+                <td>85.34%</td>
+                <td>-</td>
+                <td>1.75fps (1595GOP/s)</td>
+                <td>U200</td>
+                <td>289k</td>
+                <td>5677</td>
+                <td>2980</td>
+                <td>528</td>
+                <td>250MHz</td>
+                <td><a href="https://arxiv.org/abs/2403.18921">link</a></td>
+              </tr>
+
+              <!-- AutoWS -->
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>ResNet18</td>
+                <td>70.3%</td>
+                <td>27.0ms</td>
+                <td>-</td>
+                <td>ZC706</td>
+                <td>38k</td>
+                <td>150</td>
+                <td>1709</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>ResNet18</td>
+                <td>70.5%</td>
+                <td>7.0ms</td>
+                <td>-</td>
+                <td>ZCU102</td>
+                <td>127k</td>
+                <td>1251</td>
+                <td>2318</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>ResNet18</td>
+                <td>70.0%</td>
+                <td>1.3ms</td>
+                <td>-</td>
+                <td>U50</td>
+                <td>704k</td>
+                <td>5817</td>
+                <td>2490</td>
+                <td>576</td>
+                <td>250MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>ResNet50</td>
+                <td>76.0%</td>
+                <td>3.4ms</td>
+                <td>-</td>
+                <td>U50</td>
+                <td>867k</td>
+                <td>3807</td>
+                <td>2698</td>
+                <td>640</td>
+                <td>250MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>ResNet50</td>
+                <td>76.0%</td>
+                <td>1.8ms</td>
+                <td>-</td>
+                <td>U250</td>
+                <td>1714k</td>
+                <td>7804</td>
+                <td>4025</td>
+                <td>967</td>
+                <td>250MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>            
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>MobileNetV2</td>
+                <td>65.6%</td>
+                <td>4.8ms</td>
+                <td>-</td>
+                <td>ZC706</td>
+                <td>219k</td>
+                <td>391</td>
+                <td>1084</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>ImageNet</td>
+                <td>MobileNetV2</td>
+                <td>65.7%</td>
+                <td>2.3ms</td>
+                <td>-</td>
+                <td>ZCU102</td>
+                <td>273k</td>
+                <td>1222</td>
+                <td>1428</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2311.04764">link</a></td>
+              </tr>    
+
+              <!-- SATAY -->
+              <tr>
+                <td>2023</td>
+                <td>COCO</td>
+                <td>YOLOv3-Tiny</td>
+                <td>33.9%</td>
+                <td>14.3ms</td>
+                <td>418.9GOP/s</td>
+                <td>VCU110</td>
+                <td>127k</td>
+                <td>1780</td>
+                <td>4181</td>
+                <td>-</td>
+                <td>220MHz</td>
+                <td><a href="https://arxiv.org/abs/2309.01587">link</a></td>
+              </tr>   
+              <tr>
+                <td>2023</td>
+                <td>COCO</td>
+                <td>YOLOv3-Tiny</td>
+                <td>33.9%</td>
+                <td>6.8ms</td>
+                <td>875.7GOP/s</td>
+                <td>VCU118</td>
+                <td>431k</td>
+                <td>6687</td>
+                <td>4296</td>
+                <td>90</td>
+                <td>255MHz</td>
+                <td><a href="https://arxiv.org/abs/2309.01587">link</a></td>
+              </tr> 
+              <tr>
+                <td>2023</td>
+                <td>COCO</td>
+                <td>YOLOv5s</td>
+                <td>56.2%</td>
+                <td>46.4ms</td>
+                <td>392.0GOP/s</td>
+                <td>VCU110</td>
+                <td>602k</td>
+                <td>1794</td>
+                <td>3776</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2309.01587">link</a></td>
+              </tr>   
+              <tr>
+                <td>2023</td>
+                <td>COCO</td>
+                <td>YOLOv5s</td>
+                <td>56.2%</td>
+                <td>14.9ms</td>
+                <td>1219.8GOP/s</td>
+                <td>VCU118</td>
+                <td>117k</td>
+                <td>5077</td>
+                <td>4052</td>
+                <td>33</td>
+                <td>270MHz</td>
+                <td><a href="https://arxiv.org/abs/2309.01587">link</a></td>
+              </tr> 
+              <tr>
+                <td>2023</td>
+                <td>COCO</td>
+                <td>YOLOv8s</td>
+                <td>61%</td>
+                <td>122.8ms</td>
+                <td>248.2GOP/s</td>
+                <td>VCU110</td>
+                <td>629k</td>
+                <td>1767</td>
+                <td>5565</td>
+                <td>-</td>
+                <td>200MHz</td>
+                <td><a href="https://arxiv.org/abs/2309.01587">link</a></td>
+              </tr>   
+              <tr>
+                <td>2023</td>
+                <td>COCO</td>
+                <td>YOLOv8s</td>
+                <td>61%</td>
+                <td>24.5ms</td>
+                <td>1244GOP/s</td>
+                <td>VCU118</td>
+                <td>1023k</td>
+                <td>6815</td>
+                <td>1322</td>
+                <td>713</td>
+                <td>240MHz</td>
+                <td><a href="https://arxiv.org/abs/2309.01587">link</a></td>
+              </tr> 
+
+              <!-- Mixed-TD -->
+              <!-- fpgaHART -->
+              <!-- PASS -->
+              <!-- FMM-X3D -->
+              <!-- ATHEENA -->
+              <!-- HARFLOW3D -->
+
+            </tbody>
+
+          </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
 
@@ -185,7 +519,7 @@
         <a class="nav-link" aria-current="page" href="about.html">About</a>
         <a class="nav-link" aria-current="page" href="docs.html">Docs</a>
         <a class="nav-link" aria-current="page" href="results.html">Results</a>
-        <a class="nav-link" aria-current="page" href="publications.html">Research</a>
+        <a class="nav-link" aria-current="page" href="publications.html">Publications</a>
         <a class="nav-link" aria-current="page" href="visualisation.html">Visualisation</a>
       </div>
       <p class="text-center text-body-secondary">Designed by Alexander Montgomerie-Corcoran</p>
@@ -193,6 +527,15 @@
 
     <!-- Post scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+    <script>
+      // Initialize DataTable
+      $(document).ready(function () {
+            $('#myTable').DataTable({
+                "lengthMenu": [[15, 30, 45, -1], [15, 30, 45, "All"]],
+                "pageLength": 15, // Set default number of entries per page
+                "order": [[0, 'desc']] // Order by year
+            });
+        });
+    </script>
   </body>
 </html>
